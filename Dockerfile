@@ -1,6 +1,7 @@
 FROM nginx
 
 RUN mkdir -p /opt/nginx/cache
+RUN chown -R www-data:www-data /opt/nginx/
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY shadowsocks-org.conf /etc/nginx/conf.d/shadowsocks-org.conf
