@@ -15,8 +15,11 @@ RUN apt-get update -qq && \
   apt-get -yqq clean
 
 COPY varnish /etc/default/varnish
+COPY varnish_service /etc/init.d/varnish
 
 COPY start.sh /start.sh
-CMD ["/start.sh"]
+RUN chmod +x /start.sh
+
+CMD /start.sh
 
 EXPOSE 80

@@ -1,0 +1,2 @@
+service varnish start
+nginx
