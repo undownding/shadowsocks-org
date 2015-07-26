@@ -16,6 +16,7 @@ RUN apt-get update -qq && \
 
 COPY varnish /etc/default/varnish
 
-CMD ["nginx", "service varnish start"]
+COPY start.sh /start.sh
+CMD ["/start.sh"]
 
 EXPOSE 80
