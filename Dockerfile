@@ -15,6 +15,7 @@ RUN apt-get update -qq && \
   apt-get -yqq install varnish && \
   apt-get -yqq clean
 
+COPY default.vcl /etc/varnish/default.vcl
 COPY varnish /etc/default/varnish
 COPY varnish_service /etc/init.d/varnish
 
